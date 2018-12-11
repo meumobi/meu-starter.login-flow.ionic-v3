@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+        <button ion-button block (click)="login()" *ngIf="!(authState$ | async)">Login</button>
+        <button ion-button block color="danger" (click)="logout()" *ngIf="(authState$ | async)">Logout</button>
+        <button ion-button block color="secondary" (click)="openPage('LandingPage')">Home</button>
+
+<!--   <form (ngSubmit)="loginUser(user)" [formGroup]="user" novalidate>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      <button type="submit" [disabled]="user.invalid" ion-button block round outline>Login</button>
+    </ion-list>
+  </form> -->
+</ion-content>
